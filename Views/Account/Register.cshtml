@@ -1,0 +1,80 @@
+﻿@model MvcApplication2.Models.CustomerLogin
+@{
+    ViewBag.Title = "Register";
+}
+<script src="/Scripts/jquery-1.7.1.js"></script>
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Create a new account.</h2>
+</hgroup>
+
+@using (Html.BeginForm("RegisterAccount", "Login", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    
+    <fieldset >
+        <legend>Registration Form</legend>
+        <ol>
+
+            <li>
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Username )
+                @Html.TextBoxFor(m => m.Username, new {id="us" })
+                <input type="button" id="b2" value="Check Availability" /><div id="checking">Checking</div><div id="result"></div>
+             
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password)
+            </li>
+            <li>
+              <p>Confirm Password:<br /></p> 
+            <input type="text"  name="confirm" />
+            </li>
+        </ol>
+        <input type="submit" value="Register" />
+
+
+    </fieldset>
+
+
+   <script src="/Scripts/jquery-1.7.1.js"></script>
+
+ <div>
+    <script>
+
+        $(document).ready(function () {
+
+            $('#checking').hide();
+
+            $('#b2').click(function () {
+
+                var userName = $('#us').val();
+
+              // alert('User Name ='+ userName);
+                $('#checking').show();
+                $.getJSON("/Login/CheckUName?UserName=" + userName, function (data) {
+                    $('#checking').hide();
+                    if (data) {
+                        $('#result').text("User Name is not availabe");
+
+                    }
+                    else {
+                        $('#result').text("User Name is available");
+                    }
+                });
+
+            });
+
+        });
+
+
+    </script>
+</div>
+}

@@ -1,0 +1,19 @@
+﻿@model MvcApplication2.Models.Product 
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Add Product:</h1>
+ 
+<form action="~/Admin/SaveProduct" method="post" enctype="multipart/form-data" >
+
+    Category: <input type="text" name="t1"> <br />
+    Product Name: @Html.TextBoxFor(model=>model.Name)<br />
+    Product Model: @Html.TextBoxFor(model=>model.Model)<br />
+    Price: @Html.TextBoxFor(model=>model.Price)<br />
+    Description: @Html.TextBoxFor(model=>model.Description)<br />
+    Brand: @Html.TextBoxFor(model=>model.Brand)<br />
+    Image: <input type="file" name="t7"><br />
+    <input type="submit" value="Add">
+</form>

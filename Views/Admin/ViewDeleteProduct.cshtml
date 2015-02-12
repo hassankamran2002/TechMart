@@ -1,0 +1,23 @@
+﻿@model MvcApplication2.Models.Product
+@{
+    ViewBag.Title = "ViewDeleteProduct";
+}
+
+<h2>Product Information</h2>
+<form method="post" action="/Admin/DeleteProduct/@Model.PId">
+    <table>
+        <tr>
+            <th style="padding-right: 10px">Product ID</th>
+            <th style="padding-right: 10px">Product Name</th>
+            <th style="padding-right: 10px">Product Price</th>
+            <th style="padding-right: 10px">Product Picture</th>
+        </tr>
+        <tr>
+            <td style="padding-right: 10px">@Model.PId</td>
+            <td style="padding-right: 10px">@Model.Name</td>
+            <td style="padding-right: 10px">@Model.Price</td>
+            <td style="padding-right: 10px">@Model.Image</td>
+        </tr>
+    </table>
+    <input type="submit" value="Delete" />
+</form>

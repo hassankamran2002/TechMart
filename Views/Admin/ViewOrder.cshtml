@@ -1,0 +1,24 @@
+﻿@model List<MvcApplication2.Models.Order>
+@{
+    ViewBag.Title = "ViewOrder";
+}
+<h1>Order Information</h1>
+<table>
+    <tr>
+        <th style="padding-right: 10px">Order ID</th>
+        <th style="padding-right: 10px">Order Time</th>
+        <th style="padding-right: 10px">Order Date</th>
+        <th style="padding-right: 10px">Payment</th>
+        <th style="padding-right: 10px">Payment Status</th>
+    </tr>
+    @foreach (var m in Model)
+    {
+        <tr>
+            <td style="padding-right: 10px">@m.Oid</td>
+            <td style="padding-right: 10px">@m.Time</td>
+            <td style="padding-right: 10px">@m.Date</td>
+            <td style="padding-right: 10px">@m.Payment</td>
+            <td style="padding-right: 10px">@m.Status</td>
+        </tr>
+    }
+</table>

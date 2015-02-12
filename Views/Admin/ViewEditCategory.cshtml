@@ -1,0 +1,13 @@
+﻿@model MvcApplication2.Models.Category
+@{
+    ViewBag.Title = "ViewEditCategory";
+}
+
+<form method="post" action="/Admin/EditCategory/@Model.CatId">
+    <ol>
+        <li>
+            Category Name : <input type="text" value="@Model.CatName" name="cat_name" />
+        </li>
+    </ol>
+    <input type="submit" value="Update" />
+</form>

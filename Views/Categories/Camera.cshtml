@@ -1,0 +1,21 @@
+﻿@model List<MvcApplication2.Models.Product>
+@{
+    ViewBag.Title = "Camera";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Camera's Category</h1>
+
+
+    
+    @foreach(var m in Model)
+    {
+         <div class="col-md-3">
+         <a href="/Categories/Details/@m.PId" class="thumbnail">
+              <img src="@m.Image" alt="Image not Found" style="height:200px ;width:200px" /> </a>
+                <div class="caption">
+                        <h2>@m.Brand @m.Model</h2>
+                        <p style="color:brown">Rs: @m.Price</p>
+                </div>
+       </div>
+    }

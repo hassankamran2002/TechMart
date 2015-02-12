@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "AddAdmin";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Add New Admin</h2>
+
+
+  <form action="~/Admin/SaveAdmin" method="post">
+                Username: <input type="text" name="t1"><br />
+                Password: <input type="password" name="t2"><br />
+                <input type="submit" value="Add Admin">
+            </form>

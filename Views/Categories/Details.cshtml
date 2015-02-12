@@ -1,0 +1,20 @@
+﻿@model MvcApplication2.Models.Product
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details:</h1>
+
+<form method="post" action="/Order/OrderForm/@Model.PId">
+
+    <h1>Product Name: @Model.Name</h1>
+    <h2>Price : @Model.Price</h2>
+    <h3>Brand : @Model.Brand </h3>
+    <h3>Model : @Model.Brand </h3>
+    <h3>Description: @Model.Description </h3>
+    <img src="@Model.Image"/> 
+    <input type="submit" value="Add To Cart" />
+</form>
+
+

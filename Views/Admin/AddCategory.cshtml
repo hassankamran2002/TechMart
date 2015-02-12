@@ -1,0 +1,13 @@
+﻿
+
+@model MvcApplication2.Models.Category
+@{
+    ViewBag.Title = "AddCategory";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>AddCategory</h2>
+<form method="post" action="/Admin/SaveCategory">
+    Category Name @Html.TextBoxFor(model => model.CatName)<br />
+    <input type="submit" value="save" />
+</form>

@@ -1,0 +1,17 @@
+﻿@model MvcApplication2.Models.Category
+@{
+    ViewBag.Title = "ViewDeleteCategory";
+}
+<form method="post" action="/Admin/DeleteCategory/@Model.CatId">
+    <table>
+        <tr>
+            <th style="padding-right: 10px">Category ID</th>
+            <th style="padding-right: 10px">Category Name</th>
+        </tr>
+        <tr>
+            <td style="padding-right: 10px">@Model.CatId</td>
+            <td style="padding-right: 10px">@Model.CatName</td>
+        </tr>
+    </table>
+    <input type="submit" value="Delete" />
+</form>

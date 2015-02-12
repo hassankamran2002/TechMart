@@ -1,0 +1,21 @@
+﻿@model List<MvcApplication2.Models.Category>
+@{
+    ViewBag.Title = "ViewCategory";
+}
+<table>
+    <tr>
+        <th style="padding-right: 10px">Category ID</th>
+        <th style="padding-right: 10px">Category Name</th>
+        <th style="padding-right: 10px">Edit</th>
+        <th style="padding-right: 10px">Delete</th>
+    </tr>
+    @foreach (var m in Model)
+    {
+        <tr>
+            <td>@m.CatId</td>
+            <td>@m.CatName</td>
+            <td><a href="/Admin/ViewEditCategory/@m.CatId">Edit</a></td>
+            <td><a href="/Admin/ViewDeleteCategory/@m.CatId">Delete</a></td>
+        </tr>
+    }
+</table>

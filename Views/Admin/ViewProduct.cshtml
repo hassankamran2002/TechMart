@@ -1,0 +1,38 @@
+﻿@model List<MvcApplication2.Models.Product>
+@{
+    ViewBag.Title = "ViewProduct";
+}
+<h1>Product Information</h1>
+<table>
+    <tr>
+        <th style="padding-right: 10px">Category ID</th>
+        <th style="padding-right: 10px">Product ID</th>
+        <th style="padding-right: 10px">Product Name</th>
+        <th style="padding-right: 10px">Price</th>
+        <th style="padding-right: 10px">Image</th>
+        <th style="padding-right: 10px">Description</th>
+        <th style="padding-right: 10px">Model</th>
+        <th style="padding-right: 10px">Brand</th>
+        <th style="padding-right: 10px">Edit</th>
+        <th style="padding-right: 10px">Delete</th>
+    </tr>
+    @foreach (var m in Model)
+    {
+        <tr>
+            <td style="padding-right: 10px">@m.catId</td>
+            <td style="padding-right: 10px">@m.PId</td>
+            <td style="padding-right: 10px">@m.Name</td>
+            <td style="padding-right: 10px">@m.Price</td>
+            <td>
+             <img src="@m.Image" width="100" height="100" />
+
+            </td>
+            <td style="padding-right: 10px">@m.Description</td>
+            <td style="padding-right: 10px">@m.Model</td>
+            <td style="padding-right: 10px">@m.Brand</td>
+            <td><a href="/Admin/ViewEditProduct/@m.PId">Edit</a></td>
+            <td><a href="/Admin/ViewDeleteProduct/@m.PId">Delete</a></td>
+        </tr>
+    }
+</table>
+

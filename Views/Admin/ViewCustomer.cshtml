@@ -1,0 +1,29 @@
+﻿@model List<MvcApplication2.Models.Customer>
+@{
+    ViewBag.Title = "ViewCustomer";
+}
+<h1>Users Information</h1>
+<table>
+    <tr>
+        <th style="padding-right: 10px">User ID</th>
+        <th style="padding-right: 10px">Name</th>
+        <th style="padding-right: 10px">Email</th>
+        <th style="padding-right: 10px">Address</th>
+        <th style="padding-right: 10px">Contact No</th>
+        <th style="padding-right: 10px">Order Id</th>
+        <th style="padding-right: 10px">Product ID</th>
+    </tr>
+    @foreach (var m in Model)
+    {
+        <tr>
+            <td>@m.CId</td>
+            <td>@m.Name</td>
+            <td>@m.Email</td>
+            <td>@m.Address</td>
+            <td>@m.Conatct_No</td>
+            <td>@m.Oid</td>
+            <td>@m.Pid</td>
+
+        </tr>
+    }
+</table>

@@ -1,0 +1,26 @@
+﻿@model MvcApplication2.Models.Product
+@{
+    ViewBag.Title = "OrderForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>OrderForm: <br> 
+    Enter Details.
+</h2>
+<form method="post" action="/Order/Addtocart/@Model.PId">
+    <ul>
+        <li>Name:<input type="text" name="name" /></li>
+        <li>Email:<input type="text" name="email" /></li>
+        <li>Address:<input type="text" name="city" /></li>
+        <li>Phone:<input type="text" name="phone" /></li>
+    </ul>
+    <input type="submit" value="Add to Cart" />
+</form>
+
+
+<script>
+function myFunction() {
+    document.getElementById("type").innerHTML = "Succesfully Added to Cart";
+
+}
+</script>

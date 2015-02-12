@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "LoginAgain";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<hgroup class="title">
+    <h1>Admin Panel</h1>
+</hgroup>
+
+<h2>Use a Admin account to log in.</h2>
+            <h3 style="color:red">Enter Correct Username/Password Combination</h3>
+             <form action="~/Admin/LoginConfirm" method="post">
+                Username: <input type="text" name="t1"><br />
+                Password: <input type="password" name="t2"><br />
+                <input type="submit" value="Login">
+            </form>

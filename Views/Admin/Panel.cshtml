@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Panel";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Welcome to Admin Panel</h1>
+<h1>Menu</h1>
+ <ul>      
+    
+     <li>@Html.ActionLink("Add Product", "AddProduct", "Admin", new { style="font size=100px " })</li>
+     <li>@Html.ActionLink("Add Category","AddCategory","Admin", new { style="font size=100px" })</li>
+     <li>@Html.ActionLink("View Category","ViewCategory","Admin", new { style="font size=100px" })</li>
+     <li>@Html.ActionLink("View Product","ViewProduct","Admin", new { style="font size=100px" })</li>
+     <li>@Html.ActionLink("View Customer","ViewCustomer","Admin", new { style="width:250px" })</li>
+     <li>@Html.ActionLink("View Order","ViewOrder","Admin", new { style="font size=100px" })</li>
+     <li>@Html.ActionLink("Add New Admin ","AddAdmin","Admin")</li>
+     <li>@Html.ActionLink("Sign Out","SignOut","Admin", new { style="font size=100px" })</li>
+     
+</ul>
